@@ -9,9 +9,9 @@ Where We start by creating two models: one using Automated ML and one customized
 
 ![Diagrame](Diagram.png "Diagrame")
 
-## Project Set Up and Installation
-*OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
-
+## Project Context
+The main goal of this project is to create a classifier to predict if a personne has the parkinson disies based  on biomedical voice measurements from 
+different peaple  
 ## Dataset
 
 ### Overview
