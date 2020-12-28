@@ -7,6 +7,7 @@
 In this project we had the opportunity to use the knowledge we obtained from the Nanodegree to solve a problem of our choice. 
 Where We start by creating two models: one using Automated ML and one customized model whose hyperparameters are tuned using HyperDrive. we then compare the performance of both models and finally deploy the best performing one.
 
+![Diagrame](Diagrame.png "Diagrame")
 
 ## Project Set Up and Installation
 *OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
