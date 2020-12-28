@@ -1,9 +1,12 @@
-# Azure-ML-Engineer-Parkinsons-detection-
-*NOTE:* This file is a template that you can use to create the README for your project. The *TODO* comments below will highlight the information you should be sure to include.
 
-# Your Project Title Here
+# Parkinson detection (from data to the model deployement) using Azure Machine Learning  
 
-*TODO:* Write a short introduction to your project.
+## Summary of the project
+**This project is part of the Udacity Azure ML Nanodegree.**
+
+In this project we had the opportunity to use the knowledge we obtained from the Nanodegree to solve a problem of our choice. 
+Where We start by creating two models: one using Automated ML and one customized model whose hyperparameters are tuned using HyperDrive. we then compare the performance of both models and finally deploy the best performing one.
+
 
 ## Project Set Up and Installation
 *OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
