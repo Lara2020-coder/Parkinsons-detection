@@ -10,8 +10,13 @@ Where We start by creating two models: one using Automated ML and one customized
 ![Diagrame](Diagram.png "Diagrame")
 
 ## Project Context
-The main goal of this project is to create a classifier to predict if a personne has the parkinson disies based  on biomedical voice measurements from 
-different peaple  
+
+Parkinson's disease is a brain disorder that leads to shaking, stiffness, and difficulty with walking, balance, coordination, and talking it may also result in mental and behavioral changes, sleep problems, depression, memory difficulties, and fatigue. Several disorders can cause symptoms similar to those of Parkinson's disease and there are also different ways to do the diagnosis (medical test, response to drug treatment,..) and it is also important to make an exact diagnosis as soon as possible.
+This lead to the main goal of this project which is  an attemptto create a classifier to predict if a person has Parkinson disease based on biomedical voice measurements from different people  
+
+**NB: the data used here is old but the goal is really to demonstrate that the machine learning discipline applied in the field of medicine will save lives**
+
+
 ## Dataset
 
 ### Overview
