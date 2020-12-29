@@ -15,7 +15,7 @@ Parkinson's disease is a brain disorder that leads to shaking, stiffness, and di
 
 This lead to the main goal of this project which is  an attempt to create a classifier to predict if a person has Parkinson disease based on biomedical voice measurements from different people  
 
-![parkinson](parkinson.jpg =100x20 "parkinson")
+![parkinson](parkinson.jpg "parkinson")
 
 **NB: the data used here is old but the goal is to demonstrate that the Machine Learning discipline applied in the field of medicine will save more lives**
 
