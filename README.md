@@ -27,16 +27,17 @@ The main Goal of this task is to discriminate healthy people from those with par
 The data was loaded first in this repository so that it can be used directly into the different notebook via the link below  https://raw.githubusercontent.com/hananeouhammouch/Parkinsons-detection/master/parkinsons.data
 
 ## Automated ML
-To configure the Automated ML run we used the setting bellow :
+To configure the Automated ML run we used the setting described bellow :
+
 ![Automl_config](Automl_config.PNG "Automl_confige")
 
 |Setting |Reasons ?|
 |-|-|
 |**experiment_timeout_minutes**|Maximum amount of time in minutes that all iterations combined can take before the experiment terminates (15 minute because the dataset include only 195 lines)|
 |**max_concurrent_iterations**|To help manage child runs in parallele mode, we create a dedicated cluster per experiment, and match the number of this setting (4) to the number of nodes in the cluster(5-1))|
-|**n_cross_validations**|Number of cross validation (5) splits to ensure that they will be no overfiting |
+|**n_cross_validations**|Number of cross validation (5 splits to ensure that they will be no overfiting) |
 |**primary_metric**|This is the metric that we want to optimize (accuracy) |
-|**task**|classification |
+|**task**|Classification |
 |**compute_target**|To define the compute cluster we will be using |
 |**training_data**|To specify the training dataset stored in the datastore  |
 |**label_column_name**|To specify the dependent variable that we are trying to classify |
@@ -52,6 +53,16 @@ After the execution, the AutoML Result not only includes the best model resultin
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
 
+The algorithm we choose for this classification problem, is LogisticRegression because we are trying to predict if a patient will have the parkinson disease based on a range of biomedical voice measurements (yes or no) which means two outcomes.
+And To improve the model we optimize the hyperparameters using Azure Machine Learning's tuning capabilities Hyperdrive
+
+First of all, we define the hyperparameter space to sweep over. which means tuning the C and max_iter parameters. In this step, we use the random sampling RandomParameterSampling to try different configuration sets of hyperparameters to maximize the primary metric to make the tuning more specific
+
+Then we define the termination Policy for every run using BanditPolicy based on a slack factor equal to 0.01 as criteria for evaluation to conserves resources by terminating runs that are poorly performing and anssure that every run will give better result than the one before
+
+Once completed we create the SKLearn estimator
+
+An finally we define the hyperdrive configuration where we set 20 as the maximum of iteration (why because we don't have a lot of data) and used the element defined above before submiting the experiment
 
 ### Results
 *TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
