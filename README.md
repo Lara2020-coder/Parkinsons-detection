@@ -57,8 +57,15 @@ After the execution, the AutoML Result not only includes the best model resultin
 This experiment can be improved in the future by adding more data in it , giving more time to the run and also trying deep learning which can delever better result
 
 
-**NB: the result of the experiment are presented bellow with somescreenshots** 
-of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+**NB: the result of the experiment are presented bellow with some screenshots** 
+
+*  `RunDetails` execution 
+![Automl_run_details](Automl_run_details.PNG "Automl_run_details")
+
+*  Best model selection and registration 
+![Automl_best_model](Automl_best_model.PNG "Automl_best_model")
+
+
 
 ## Hyperparameter Tuning
 
