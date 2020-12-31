@@ -24,10 +24,20 @@ The dataset used in this project was created by Max Little of the University of 
 The main Goal of this task is to discriminate healthy people from those with parkinson disease(PD), according to "status" column which is set to 0 for healthy and 1 for PD to do this i used the different voice measure included in the dataset (columns)
 
 ### Access
-The data was loaded first in this repository so that it can be used directly into the different notebook via the link https://raw.githubusercontent.com/hananeouhammouch/Parkinsons-detection/master/parkinsons.data
+The data was loaded first in this repository so that it can be used directly into the different notebook via the link below  https://raw.githubusercontent.com/hananeouhammouch/Parkinsons-detection/master/parkinsons.data
 
 ## Automated ML
-*TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
+To configure the Automated ML run we used the setting bellow :
+|Setting |Reasons ?|
+|-|-|
+|**experiment_timeout_minutes**|Maximum amount of time in minutes that all iterations combined can take before the experiment terminates (15 minute because the dataset include only 195 lines)|
+|**max_concurrent_iterations**|To help manage child runs  in parallele mode and when they can be performed, we create a dedicated cluster per experiment, and match the number of this setting (4) to the number of nodes in the cluster(5-1))|
+|**n_cross_validations**|Number of cross validation (5) splits to ensure that they will be no overfiting |
+|**primary_metric**|This is the metric that we want to optimize (accuracy) |
+|**task**|classification |
+|**compute_target**|To define the compute cluster we will be using |
+|**training_data**|To specify the training dataset stored in the datastore  |
+|**label_column_name**|To specify the dependent variable that we are trying to classify |
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
