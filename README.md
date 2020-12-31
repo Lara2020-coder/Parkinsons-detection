@@ -54,6 +54,8 @@ Before running, AutoML Start first by checking over the input data to ensure hig
 
 After the execution, the AutoML Result not only includes the best model resulting from the running of multiple classification algorithms but he also delivers interesting information to understand more why this choice of model was made in this case of problem by learning what features are directly impacting the model and why.
 
+In this case, the best model was generated using MaxAbsScaler LightGBM Algorithm and give us an Accuracy of 0.9641
+
 This experiment can be improved in the future by adding more data in it , giving more time to the run and also trying deep learning which can delever better result
 
 
