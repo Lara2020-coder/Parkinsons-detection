@@ -28,10 +28,12 @@ The data was loaded first in this repository so that it can be used directly int
 
 ## Automated ML
 To configure the Automated ML run we used the setting bellow :
+![Automl_config](Automl_config.PNG "Automl_confige")
+
 |Setting |Reasons ?|
 |-|-|
 |**experiment_timeout_minutes**|Maximum amount of time in minutes that all iterations combined can take before the experiment terminates (15 minute because the dataset include only 195 lines)|
-|**max_concurrent_iterations**|To help manage child runs  in parallele mode and when they can be performed, we create a dedicated cluster per experiment, and match the number of this setting (4) to the number of nodes in the cluster(5-1))|
+|**max_concurrent_iterations**|To help manage child runs in parallele mode, we create a dedicated cluster per experiment, and match the number of this setting (4) to the number of nodes in the cluster(5-1))|
 |**n_cross_validations**|Number of cross validation (5) splits to ensure that they will be no overfiting |
 |**primary_metric**|This is the metric that we want to optimize (accuracy) |
 |**task**|classification |
@@ -41,6 +43,9 @@ To configure the Automated ML run we used the setting bellow :
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
+Before running, AutoML Start first by checking over the input data to ensure high quality is being used to train the model where he uses class balancing detection, Missing Feature values imputation, and high cardinality feature detection.
+
+After the execution, the AutoML Result not only includes the best model resulting from the running of multiple classification algorithms but he also delivers interesting information to understand more why this choice of model was made in this case of problem by learning what features are directly impacting the model and why.
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
