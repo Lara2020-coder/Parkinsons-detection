@@ -87,7 +87,7 @@ This experiment can be improved in the future by adding more data in it , using 
 ![Run_details_hyperdrive](Run_details_hyperdrive.PNG "Run_details_hyperdrive")
 
 *  Best model selection and registration 
-![Run_details_hyperdrive_best(Run_details_hyperdrive_best.png "Run_details_hyperdrive_best"
+![Run_details_hyperdrive_best](Run_details_hyperdrive_best.png "Run_details_hyperdrive_best")
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
