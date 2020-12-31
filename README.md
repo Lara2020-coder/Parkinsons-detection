@@ -99,17 +99,17 @@ This experiment can be improved in the future by adding more data in it , using 
 ![Run_details_hyperdrive_best](Run_details_hyperdrive_best.png "Run_details_hyperdrive_best")
 
 ## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
-After the execution of the two experiment we select The best model which was from Auto mL run based on the metric value ,and we move then to the deployment 
+After the execution of the two experiment we select The best model which was from Auto mL run based on the metric value ,and we move then to the deployment and the testing of the webservice 
 
 The instruction used in this step are described below:
-*  Save the model for the deployement and setting the environnement 
+*  Save and register the best model for the deployement , dowwnload the conda , set the environement, download the scoring and set the inferance config and the Aci Web service config 
+![Step1_deploy](step1_deploy.PNG "Step1_deploy")
 
-*  Create the inference configuration
+*  Deploy the model as a web service and display the scoring and the swagger URI
+![Step2_deploy](step2_deploy.PNG "Step2_deploy")
 
-*  Deploy the best model using the local web service 
-
-Once the model deployed we move then to testing it by first selecting a line from the dataset , dumping it to a json format and then pass it to the model for testing and the result are presented below :
+*  Testing the webservice by first selecting sample row from the dataset , then dumping the row to json format and finaly pass the jason rw to the web service 
+![Step3_deploy](step3_deploy.PNG "Step3_deploy")
 
 
 ## Screen Recording
