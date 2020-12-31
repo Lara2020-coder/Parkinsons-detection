@@ -49,16 +49,18 @@ To configure the Automated ML run we used the setting described bellow :
 |**label_column_name**|To specify the dependent variable that we are trying to classify |
 
 ### Results
-How could you have improved ?
+
 Before running, AutoML Start first by checking over the input data to ensure high quality is being used to train the model where he uses class balancing detection, Missing Feature values imputation, and high cardinality feature detection.
 
 After the execution, the AutoML Result not only includes the best model resulting from the running of multiple classification algorithms but he also delivers interesting information to understand more why this choice of model was made in this case of problem by learning what features are directly impacting the model and why.
 
 This experiment can be improved in the future by adding more data in it , giving more time to the run and also trying deep learning which can delever better result
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+
+
+**NB: the result of the experiment are presented bellow with somescreenshots** 
+of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
 ## Hyperparameter Tuning
-*TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
 
 The algorithm we choose for this classification problem, is LogisticRegression because we are trying to predict if a patient will have the parkinson disease based on a range of biomedical voice measurements (yes or no) which means two outcomes.
 And To improve the model we optimize the hyperparameters using Azure Machine Learning's tuning capabilities Hyperdrive
@@ -71,10 +73,21 @@ Once completed we create the SKLearn estimator
 
 An finally we define the hyperdrive configuration where we set 20 as the maximum of iteration (why because we don't have a lot of data) and used the element defined above before submiting the experiment
 
-### Results
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
+![Hyperdrive_config](Hyperdrive_config.PNG "Hyperdrive_config")
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+### Results
+
+We run this experiment multiple times and do some tunning to the Hyperdrive configuration to improve the Accuracy and once satisfied we register our model for future use. In this case the best model was generated using this hyperparameters (C = '0.2', max_iter = '300') and give an Accuracy of 0.8983050847457628
+
+This experiment can be improved in the future by adding more data in it , using different algorithm  and also adding more iteration in the hyperdrive configuration which can delever better result
+
+**NB: the result of the experiment are presented bellow with some screenshots** 
+
+*  `RunDetails` execution 
+![Run_details_hyperdrive](Run_details_hyperdrive.PNG "Run_details_hyperdrive")
+
+*  Best model selection and registration 
+![Run_details_hyperdrive_best(Run_details_hyperdrive_best.png "Run_details_hyperdrive_best")
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
