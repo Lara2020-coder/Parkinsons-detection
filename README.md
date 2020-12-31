@@ -16,6 +16,8 @@ Parkinson's disease is a brain disorder that leads to shaking, stiffness, and di
 
 This lead to the main goal of this project which is  an attempt to create a classifier to predict if a person has Parkinson disease based on biomedical voice measurements from different people
 
+![parkinson](parkinson.jpg "parkinson")
+
 ### Datasource
 The dataset used in this project was created by Max Little of the University of Oxford, in collaboration with the National Centre for Voice and Speech, Denver, Colorado, who recorded the speech signals. It is composed of a range of biomedical voice measurements from 31 people, 23 with Parkinson's disease (PD). 
 
@@ -47,11 +49,12 @@ To configure the Automated ML run we used the setting described bellow :
 |**label_column_name**|To specify the dependent variable that we are trying to classify |
 
 ### Results
-How could you have improved i
+How could you have improved ?
 Before running, AutoML Start first by checking over the input data to ensure high quality is being used to train the model where he uses class balancing detection, Missing Feature values imputation, and high cardinality feature detection.
 
 After the execution, the AutoML Result not only includes the best model resulting from the running of multiple classification algorithms but he also delivers interesting information to understand more why this choice of model was made in this case of problem by learning what features are directly impacting the model and why.
 
+This experiment can be improved in the future by adding more data in it , giving more time to the run and also trying deep learning which can delever better result
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
 ## Hyperparameter Tuning
