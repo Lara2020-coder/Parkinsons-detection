@@ -100,6 +100,17 @@ This experiment can be improved in the future by adding more data in it , using 
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+After the execution of the two experiment we select The best model which was from Auto mL run based on the metric value ,and we move then to the deployment 
+
+The instruction used in this step are described below:
+*  Save the model for the deployement and setting the environnement 
+
+*  Create the inference configuration
+
+*  Deploy the best model using the local web service 
+
+Once the model deployed we move then to testing it by first selecting a line from the dataset , dumping it to a json format and then pass it to the model for testing and the result are presented below :
+
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
@@ -107,5 +118,4 @@ This experiment can be improved in the future by adding more data in it , using 
 - Demo of the deployed  model
 - Demo of a sample request sent to the endpoint and its response
 
-## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+
