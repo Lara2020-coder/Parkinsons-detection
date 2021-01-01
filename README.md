@@ -19,7 +19,9 @@ This lead to the main goal of this project which is  an attempt to create a clas
 ![parkinson](parkinson.jpg "parkinson")
 
 ### Datasource
-The dataset used in this project was created by Max Little of the University of Oxford, in collaboration with the National Centre for Voice and Speech, Denver, Colorado, who recorded the speech signals. It is composed of a range of biomedical voice measurements from 31 people, 23 with Parkinson's disease (PD). 
+The dataset used in this project was created by Max Little of the University of Oxford, in collaboration with the National Centre for Voice and Speech, Denver, Colorado, who recorded the speech signals. 
+
+It is composed of a range of biomedical voice measurements from 31 people, 23 with Parkinson's disease (PD). 
 
 Each column in the table is a particular voice measure, and each row corresponds one of 195 voice recording from these individuals ("name" column). 
 
@@ -58,7 +60,6 @@ In this case, the best model was generated using MaxAbsScaler LightGBM Algorithm
 
 This experiment can be improved in the future by adding more data in it , giving more time to the run and also trying deep learning which can delever better result
 
-
 **NB: the result of the experiment are presented bellow with some screenshots** 
 
 *  `RunDetails` execution 
@@ -68,13 +69,12 @@ This experiment can be improved in the future by adding more data in it , giving
 ![Automl_best_model](Automl_best_model.PNG "Automl_best_model")
 
 
-
 ## Hyperparameter Tuning
 
 The algorithm we choose for this classification problem, is LogisticRegression because we are trying to predict if a patient will have the parkinson disease based on a range of biomedical voice measurements (yes or no) which means two outcomes.
 And To improve the model we optimize the hyperparameters using Azure Machine Learning's tuning capabilities Hyperdrive
 
-First of all, we define the hyperparameter space to sweep over. which means tuning the C and max_iter parameters. In this step, we use the random sampling RandomParameterSampling to try different configuration sets of hyperparameters to maximize the primary metric to make the tuning more specific
+First of all, we define the hyperparameter space to sweep over. which means tuning the C and max_iter parameters. In this step, we use the random sampling to try different configuration sets of hyperparameters to maximize the primary metric to make the tuning more specific
 
 Then we define the termination Policy for every run using BanditPolicy based on a slack factor equal to 0.01 as criteria for evaluation to conserves resources by terminating runs that are poorly performing and anssure that every run will give better result than the one before
 
@@ -86,7 +86,7 @@ An finally we define the hyperdrive configuration where we set 20 as the maximum
 
 ### Results
 
-We run this experiment multiple times and do some tunning to the Hyperdrive configuration to improve the Accuracy and once satisfied we register our model for future use. In this case the best model was generated using this hyperparameters (C = '0.2', max_iter = '300') and give an Accuracy of 0.8983050847457628
+We run this experiment multiple times and do some tunning to the Hyperdrive configuration to improve the Accuracy and once satisfied we register our model for future use. In this case the best model was generated using this hyperparameters (C = '0.3', max_iter = '100') and give an Accuracy of 0.949152
 
 This experiment can be improved in the future by adding more data in it , using different algorithm  and also adding more iteration in the hyperdrive configuration which can delever better result
 
@@ -102,18 +102,19 @@ This experiment can be improved in the future by adding more data in it , using 
 After the execution of the two experiment we select The best model which was from Auto mL run based on the metric value ,and we move then to the deployment and the testing of the webservice 
 
 The instruction used in this step are described below:
+
 *  Save and register the best model for the deployement , dowwnload the conda , set the environement, download the scoring and set the inferance config and the Aci Web service config 
 ![Step1_deploy](step1_deploy.PNG "Step1_deploy")
 
 *  Deploy the model as a web service and display the scoring and the swagger URI
 ![Step2_deploy](step2_deploy.PNG "Step2_deploy")
 
-*  Testing the webservice by first selecting sample row from the dataset , then dumping the row to json format and finaly pass the jason rw to the web service 
+*  Testing the webservice by first selecting sample row from the dataset , then dumping the row to json format and finaly pass the json rOw to the web service 
 ![Step3_deploy](step3_deploy.PNG "Step3_deploy")
 
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
+It's include :
 - A working model
 - Demo of the deployed  model
 - Demo of a sample request sent to the endpoint and its response
