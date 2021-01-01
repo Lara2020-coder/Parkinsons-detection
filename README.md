@@ -72,7 +72,7 @@ This experiment can be improved in the future by adding more data in it, giving 
 * The Best model from Azure Studio
 ![Automl_best_model](Automl_best_model_Azure.PNG "Automl_best_model")
 
-**NB:to test this Step please run automl.ipynb ** 
+**NB:to test this Step please run automl.ipynb** 
 
 ## Hyperparameter Tuning
 
