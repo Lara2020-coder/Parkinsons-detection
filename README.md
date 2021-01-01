@@ -14,7 +14,7 @@ Where We start by creating two models: one using Automated ML and one customized
 ### Overview
 Parkinson's disease is a brain disorder that leads to shaking, stiffness, and difficulty with walking, balance, coordination, and talking it may also result in mental and behavioral changes, sleep problems,... (It is important to make an exact diagnosis as soon as possible). Several disorders can cause symptoms similar to those of Parkinson's disease and there are also different ways to do the diagnosis (medical test, response to drug treatment,..) for more information https://www.nia.nih.gov/health/parkinsons-disease#:~:text=Parkinson's%20disease%20is%20a%20brain,have%20difficulty%20walking%20and%20talking
 
-This lead to the main goal of this project which is  an attempt to create a classifier to predict if a person has Parkinson disease based on biomedical voice measurements from different people
+This lead to the main goal of this project which is an attempt to create a classifier to predict if a person has Parkinson disease based on biomedical voice measurements from different people
 
 ![parkinson](parkinson.jpg "parkinson")
 
@@ -23,9 +23,10 @@ The dataset used in this project was created by Max Little of the University of 
 
 It is composed of a range of biomedical voice measurements from 31 people, 23 with Parkinson's disease (PD). 
 
-Each column in the table is a particular voice measure, and each row corresponds to one of 195 voice recordings from these individuals ("name" column). 
+Each column in the table is a particular voice measure, and each row corresponds to 195 voice recordings from these individuals ("name" column). 
 
 For more information https://archive.ics.uci.edu/ml/datasets/parkinsons
+
 **NB: The following paper need to be quoted 'Exploiting Nonlinear Recurrence and Fractal Scaling Properties for Voice Disorder Detection', Little MA, McSharry PE, Roberts SJ, Costello DAE, Moroz IM. BioMedical Engineering OnLine 2007, 6:23 (26 June 2007)**
 
 ### Task
@@ -68,13 +69,17 @@ This experiment can be improved in the future by adding more data in it, giving 
 * The Best model selection and registration 
 ![Automl_best_model](Automl_best_model.PNG "Automl_best_model")
 
+* The Best model from Azure Studio
+![Automl_best_model](Automl_best_model_Azure.PNG "Automl_best_model")
+
+**NB:to test this Step please run automl.ipynb ** 
 
 ## Hyperparameter Tuning
 
 The algorithm we choose for this classification problem is LogisticRegression because we are trying to predict if a patient will have Parkinson's disease based on a range of biomedical voice measurements (yes or no) which means two outcomes.
 And To improve the model we optimize the hyperparameters using Azure Machine Learning's tuning capabilities Hyperdrive
 
-First of all, we define the hyperparameter space to sweep over. which means tuning the C and max_iter parameters. In this step, we use random sampling to try different configuration sets of hyperparameters to maximize the primary metric to make the tuning more specific
+First of all, we define the hyperparameter space which means tuning the C and max_iter parameters. In this step, we use random sampling to try different configuration of hyperparameters to maximize the primary metric and to make the tuning more specific
 
 Then we define the termination Policy for every run using BanditPolicy based on a slack factor equal to 0.01 as criteria for evaluation to conserves resources by terminating runs that are poorly performing and ensure that every run will give better result than the one before
 
@@ -90,13 +95,15 @@ We run this experiment multiple times and do some tunning to the Hyperdrive conf
 
 This experiment can be improved in the future by adding more data in it, using a different algorithm, and also adding more iteration in the hyperdrive configuration which can deliver a better result
 
-**NB: the result of the experiment is presented bellow with some screenshots** 
+**the result of the experiment is presented bellow with some screenshots** 
 
-*  `RunDetails` execution 
+* `RunDetails` execution 
 ![Run_details_hyperdrive](Run_details_hyperdrive.PNG "Run_details_hyperdrive")
 
 * The Best model selection and registration 
 ![Run_details_hyperdrive_best](Run_details_hyperdrive_best.png "Run_details_hyperdrive_best")
+
+**NB:to test this Step please run hyperparam_tuning.ipynb (and place the train.py) in the same directory** 
 
 ## Model Deployment
 After the execution of the two experiments, we select The best model which was from Auto mL run based on the metric value, and we move then to the deployment and the testing of the Webservice 
@@ -109,7 +116,7 @@ The instruction used in this step are described below:
 *  Deploy the model as a web service and display the scoring and the swagger URI
 ![Step2_deploy](step2_deploy.PNG "Step2_deploy")
 
-*  Testing the web service by first selecting a sample row from the dataset, then dumping the row to JSON format, and finally pass the json rOw to the web service 
+*  Testing the web service by first selecting a sample row from the dataset, then dumping the row to JSON format, and finally pass the json row to the web service 
 ![Step3_deploy](step3_deploy.PNG "Step3_deploy")
 
 
