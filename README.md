@@ -113,10 +113,8 @@ The instruction used in this step are described below:
 ![Step3_deploy](step3_deploy.PNG "Step3_deploy")
 
 
-## Screen Recording
-It's include :
+## Screen Recording: https://www.youtube.com/watch?v=bqVxVUk6hys&feature=youtu.be
+the Screen recording include :
 - A working model
 - Demo of the deployed  model
 - Demo of a sample request sent to the endpoint and its response
-
-
